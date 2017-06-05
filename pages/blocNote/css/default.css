@@ -1,0 +1,102 @@
+@font-face {
+    font-family: KevFont;
+    src: url('../fonts/pricedownbl.ttf');
+}
+
+h1 {
+    font-family: KevFont, sans-serif;
+    text-align: center;
+    background-color: #009688;
+}
+
+#tit {
+    padding-bottom: 8px;
+    height: 40px;
+    background-color: #009688;
+}
+
+body {
+    background-color: #CFD8DC;
+}
+
+#write {
+    height: 400px;
+    width: 400px;
+    background-color: #E6E26B;
+    display: inline-block;
+}
+
+#notes {
+    height: 200px;
+    width: 200px;
+    background-color: #FEFEE2;
+    display: inline-block;
+    border: 2px solid red;
+    border-radius: 5px;
+    border-color: #009688;
+    float: right;
+    margin-top: 5px;
+    margin-right: 45px;
+}
+
+#titreNote {
+    resize: none;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding:10px 15px;
+    background-color: #E6E26B;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+#txtArea {
+    padding: 21px;
+    height: 300px;
+    resize: none;
+    background-color: #E6E26B;
+    width: 100%;
+    padding-top: 6px;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+ul {
+    counter-reset: repas;
+    list-style-type: circle;
+}
+
+
+/* on initialise et nomme un compteur */
+
+li {
+    counter-increment: repas;
+    /* on incrémente le compteur à chaque nouveau li */
+    margin-bottom: 10px;
+}
+
+li:before {
+    /* on affiche le compteur */
+    padding: 0 10px 6px;
+    padding-top: 5px;
+    margin-right: 8px;
+    vertical-align: top;
+    background: #FF9800;
+    -moz-border-radius: 60px;
+    border-radius: 60px;
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #FFFFFF;
+    margin-left: -30px;
+}

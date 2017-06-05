@@ -1,0 +1,201 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    cursor: default!important;
+}
+
+#bureau {
+    height: calc(100% - 40px);
+    width: 100%;
+    position: absolute;
+    background-color: #FFFFFF;
+    /*background-image: url(../HouseWallpaper.jpg);*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#toolbar {
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    background-color: #525050;
+    bottom: 0;
+    left: 0;
+}
+
+#toolbar>div {
+    display: inline-block;
+}
+
+#btnWindows {
+    height: 90%;
+    width: 35px;
+    position: relative;
+    background-color: #525050;
+    background-image: url(../media/logoWindows.png);
+    background-size: contain;
+    background-position: center;
+}
+
+#menu {
+    height: 500px;
+    width: 360px;
+    position: absolute;
+    background-color: rgba(82, 80, 80, 0.7);
+    bottom: 0;
+    left: 0;
+    float: left;
+}
+
+#cacheMenu {
+    height: calc(100% - 40px);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+}
+
+#appMenu {
+    height: 450px;
+    width: 240px;
+    position: absolute;
+    background-color: #FFFFFF;
+    bottom: 20px;
+    left: 15px;
+}
+
+#logout {
+    margin-top: 465px;
+    height: 35px;
+    width: 90px;
+    position: absolute;
+    background-color: rgba(82, 80, 80, 0.4);
+    border: none;
+    color: white;
+    cursor: pointer;
+    left: 260px;
+    bottom: 20px;
+}
+
+.windows {
+    height: 400px;
+    width: 600px;
+    position: absolute;
+    left: 450px;
+    top: 200px;
+    background-color: #FFFFFF;
+}
+
+.bureauWindows {
+    height: calc(100% - 25px);
+    width: 100%;
+    position: absolute;
+    background-color: #FFFFFF;
+}
+
+.toolbarWindows {
+    height: 25px;
+    width: 100%;
+    position: relative;
+    background-color: #525050;
+    cursor: move!important;
+}
+
+.hide {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    background-color: #FFFFFF;
+    background-image: url(../media/hide.jpg);
+    right: 50px;
+    background-position: center;
+}
+
+.resize {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    background-color: #FFFFFF;
+    background-image: url(../media/resize.jpg);
+    right: 25px;
+    background-position: center;
+}
+
+.close {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    background-color: #FFFFFF;
+    background-image: url(../media/close.jpg);
+    right: 0px;
+    background-position: center;
+}
+
+.iconBar {
+    height: 100%;
+    width: 40px;
+    box-sizing: border-box;
+    padding: 5px;
+    vertical-align: top;
+    transition: all 1s;
+}
+
+.iconBar img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.iconBar:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.raccourci {
+    display: block;
+    color: black;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.raccourci:hover {
+    background-color: #C7C7C7;
+}
+
+.raccourci img {
+    height: 100%;
+    float: left;
+    margin-right: 15px;
+}
+
+.raccourci div {
+    display: inline-block;
+    line-height: 30px;
+    float: left;
+}
+
+#pasDispo {
+    display: none;
+}
+
+@media screen and (max-width: 640px) {
+    #bureau,
+    #toolbar,
+    #cacheMenu {
+        display: none;
+    }
+    #pasDispo {
+        display: block;
+    }
+}

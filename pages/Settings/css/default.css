@@ -1,0 +1,205 @@
+@font-face {
+    font-family: KevFont;
+    src: url('../fonts/pricedownbl.ttf');
+}
+
+body,html{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#nav {
+    float: left;
+    background-color: #455A64;
+    height: calc(100% - 48px);
+    width: 150px;
+    display: inline-block;
+}
+
+#cont {
+    float: right;
+    background-color: #CFD8DC;
+    height: calc(100% - 48px);
+    width: calc(100% - 150px);
+    display: inline-block;
+}
+
+#icones {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#icones li {
+    margin: 30px 0px;
+    background-color: #607D8B;
+    transition: all 1s;
+}
+
+#icones li:hover {
+    background-color: #CFD8DC;
+}
+
+#icones li img {
+    margin: 10px 0;
+    width: 30px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #CFD8DC!important;
+}
+
+h2 {
+    color: #353641;
+    font-family: "Arial";
+    font-size: 15px;
+    padding: 0;
+    text-align: center
+}
+
+h1 {
+    font-family: KevFont, sans-serif;
+    text-align: center;
+    background-color: #009688;
+}
+
+#mainDiv {
+    padding-bottom: 8px;
+    height: 40px;
+    background-color: #009688;
+    color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#listImages {
+    list-style-type: none;
+}
+
+#listImages li a img {
+    float: left;
+    margin: 10px;
+    border: 3px solid #009688;
+    transition: box-shadow 0.5s ease;
+}
+
+#listImages li a img:hover {
+    box-shadow: 0px 0px 12px rgba(69, 90, 100, 1);
+}
+
+#addImg {
+    display: none;
+}
+
+#listFiles {}
+
+.rightDiv {
+    text-align: right;
+}
+
+.btns {
+    font-weight: 500;
+    border-radius: 4px;
+    background-color: #FF9800;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 8px;
+    width: 90px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btns span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btns span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.btns:hover span {
+    padding-right: 15px;
+}
+
+.btns:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+#bright{
+    font-family: KevFont, sans-serif;
+    margin-left: 10px ;
+}
+
+#bright p{
+    margin-bottom: 15px;
+}
+
+
+input[type=range] {
+  margin: 10px 0;
+  width: 50%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]: {
+  width: 100%;
+  height: 12.8px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #455A64;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.6px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #455A64;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 12.8px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #455A64;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #009688;
+  cursor: pointer;
+}

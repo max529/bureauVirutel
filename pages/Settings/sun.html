@@ -1,0 +1,53 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <title>SETTINGS</title>
+        <link rel="stylesheet" type="text/css" href="css/default.css">
+    </head>
+    <script>
+    function getBrightness() {
+        var x = document.getElementById("myRange").value;
+        document.getElementById("result").innerHTML = x;
+    }
+    </script>
+
+    <body>
+        <div id="mainDiv">
+            <h1>SETTINGS</h1>
+        </div>
+        <div id="nav">
+            <ul id="icones">
+                <li>
+                    <a href="index.html">
+                        <img src="images/background.png">
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="sun.html">
+                        <img src="images/sun.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="mobile.html">
+                        <img src="images/smartphone.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="cont">
+            <div id="bright">
+                <p>Brightness :</p>
+                <p>
+                    <input type="range" id="myRange" value="90">
+                </p>
+                <p>
+                    <button class="btns" onclick="getBrightness()">Set</button>
+                    <span id="result">
+                </p>
+            </div>
+            
+    </div>
+    </body>
+
+    </html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SETTINGS</title>
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+    function addImgBtn() {
+        document.getElementById('addImg').click();
+    }
+
+    function addImgForm() {
+        $.ajax({
+            url: "/php/traitement.php",
+            type: "POST",
+            contentType: false,
+            processData: false,
+            data: new FormData(document.getElementById('addImgForm')),
+            success: function(res) {
+                res = JSON.parse(res);
+                document.getElementById('listImages').innerHTML = "";
+                for (i = 0; i < res.length; i++) {
+                    var el = document.createElement('LI');
+                    el.innerHTML = '<a onclick="switchImg(this)"><img src="' + res[i] + '" height="50" width="100" /></a>';
+                    document.getElementById('listImages').appendChild(el);
+                }
+
+            }
+        })
+    }
+    jQuery(document).ready(function($) {
+        getWp();
+    });
+
+    function switchImg(t) {
+        parent.switchImg(t);
+    }
+    var getWp = function() {
+        $.ajax({
+            url: '/php/traitement.php',
+            type: 'POST',
+            data: "getAllWp=getAllWp",
+            success: function(res) {
+                res = JSON.parse(res);
+                document.getElementById('listImages').innerHTML = "";
+                for (i = 0; i < res.length; i++) {
+                    var el = document.createElement('LI');
+                    el.innerHTML = '<a onclick="switchImg(this)"><img src="' + res[i] + '" height="50" width="100" /></a>';
+                    document.getElementById('listImages').appendChild(el);
+                }
+            }
+        })
+    }
+    </script>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <h1>SETTINGS</h1>
+    </div>
+    <div id="nav">
+        <ul id="icones">
+            <li class="active">
+                <a href="index.html">
+                    <img src="images/background.png">
+                </a>
+            </li>
+            <li>
+                <a href="sun.html">
+                    <img src="images/sun.png">
+                </a>
+            </li>
+            <li>
+                <a href="mobile.html">
+                    <img src="images/smartphone.png">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="cont">
+        <form class="rightDiv" id="addImgForm">
+            <input type="file" accept=".png,.jpg" id="addImg" name="addImg" onchange="addImgForm()">
+        </form>
+        <div class="rightDiv">
+            <button class="btns" onclick="addImgBtn()"><span>Add </span></button>
+        </div>
+        <ul id="listImages">
+        </ul>
+    </div>
+</body>
+
+</html>

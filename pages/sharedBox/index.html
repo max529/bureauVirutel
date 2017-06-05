@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html>
+
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="css/default.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>
+        function addFileBtn() {
+            document.getElementById('addFile').click();
+        }
+        $(document).ready(function() {
+            getAllDoc()
+        });
+
+        function addDocForm(t) {
+            $.ajax({
+                url: "/php/traitement.php",
+                type: "POST",
+                contentType: false,
+                processData: false,
+                data: new FormData(t.parentNode),
+                success: function(res) {
+                    res = JSON.parse(res);
+                    document.getElementById('appendHere').innerHTML = "";
+                    for (i = 0; i < res.length; i++) {
+                        var el = document.createElement("li");
+                        var name = res[i].split("/");
+                        name = name[name.length-1];
+                        el.innerHTML = '<div><div><a href="'+res[i]+'" target="_blank"><img src="images/file.png" /></a></div><p>'+name+'</p></div>';
+                        document.getElementById('appendHere').appendChild(el);
+                    }
+
+                }
+            })
+        }
+        var getAllDoc = function() {
+            $.ajax({
+                url: '/php/traitement.php',
+                type: 'POST',
+                data: "getAllDoc=getAllDoc",
+                success: function(res) {
+                    res = JSON.parse(res);
+                    document.getElementById('appendHere').innerHTML = "";
+                    for (i = 0; i < res.length; i++) {
+                        var el = document.createElement("li");
+                        var name = res[i].split("/");
+                        name = name[name.length-1];
+                        el.innerHTML = '<div><div><a href="'+res[i]+'" target="_blank"><img src="images/file.png" /></a></div><p>'+name+'</p></div>';
+                        document.getElementById('appendHere').appendChild(el);
+                    }
+                }
+            })
+
+        }
+        </script>
+    </head>
+
+    <body>
+        <div id="mainDiv">
+            <h1>Shared Box</h1>
+        </div>
+        <div id="kevdiv">
+            <form class="rightDiv">
+                <input type="file" id="addFile" name="addDoc" onchange="addDocForm(this)">
+            </form>
+            <div class="rightDiv">
+                <button class="btns" onclick=" addFileBtn()"><span>Add </span></button>
+            </div>
+            <div id="div2">
+                <ul id="appendHere">
+                </ul>
+            </div>
+        </div>
+    </body>
+
+    </html>
